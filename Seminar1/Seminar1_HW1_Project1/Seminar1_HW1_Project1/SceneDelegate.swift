@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  HW1_Project_1
+//  Seminar1_HW1_Project1
 //
-//  Created by Elena on 02.03.2024.
+//  Created by Elena on 04.03.2024.
 //
 
 import UIKit
@@ -20,9 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
-
-
-   
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
