@@ -121,7 +121,7 @@ private extension ViewController {
         let tabBarController = UITabBarController()
         let viewController1 = UINavigationController(rootViewController: FrendsViewController())
         let viewController2 = UINavigationController(rootViewController: GroupsViewController())
-        let viewController3 = UINavigationController(rootViewController: PhotoViewController())
+        let viewController3 = UINavigationController(rootViewController: PhotosViewController())
         
         viewController1.tabBarItem.title = "Friends"
         viewController2.tabBarItem.title = "Groups"

@@ -16,7 +16,7 @@
 		F38C89DF2B97366800228C76 /* CustomTableViewCellFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C89DE2B97366800228C76 /* CustomTableViewCellFriends.swift */; };
 		F38C89E12B973C3900228C76 /* CustomTableViewCellGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C89E02B973C3900228C76 /* CustomTableViewCellGroups.swift */; };
 		F38C89E32B973DF400228C76 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C89E22B973DF400228C76 /* GroupsViewController.swift */; };
-		F38C89E52B973F9400228C76 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C89E42B973F9400228C76 /* PhotoViewController.swift */; };
+		F38C89E52B973F9400228C76 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C89E42B973F9400228C76 /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		F38C89DE2B97366800228C76 /* CustomTableViewCellFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellFriends.swift; sourceTree = "<group>"; };
 		F38C89E02B973C3900228C76 /* CustomTableViewCellGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellGroups.swift; sourceTree = "<group>"; };
 		F38C89E22B973DF400228C76 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
-		F38C89E42B973F9400228C76 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		F38C89E42B973F9400228C76 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 				F38C89CA2B962FA900228C76 /* ViewController.swift */,
 				F38C89E02B973C3900228C76 /* CustomTableViewCellGroups.swift */,
 				F38C89E22B973DF400228C76 /* GroupsViewController.swift */,
-				F38C89E42B973F9400228C76 /* PhotoViewController.swift */,
+				F38C89E42B973F9400228C76 /* PhotosViewController.swift */,
 				F38C89DC2B97348800228C76 /* FrendsViewController.swift */,
 				F38C89DE2B97366800228C76 /* CustomTableViewCellFriends.swift */,
 				F38C89CF2B962FAA00228C76 /* Assets.xcassets */,
@@ -151,7 +151,7 @@
 			files = (
 				F38C89E32B973DF400228C76 /* GroupsViewController.swift in Sources */,
 				F38C89E12B973C3900228C76 /* CustomTableViewCellGroups.swift in Sources */,
-				F38C89E52B973F9400228C76 /* PhotoViewController.swift in Sources */,
+				F38C89E52B973F9400228C76 /* PhotosViewController.swift in Sources */,
 				F38C89CB2B962FA900228C76 /* ViewController.swift in Sources */,
 				F38C89DF2B97366800228C76 /* CustomTableViewCellFriends.swift in Sources */,
 				F38C89C72B962FA900228C76 /* AppDelegate.swift in Sources */,

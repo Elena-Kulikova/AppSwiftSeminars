@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotosViewController: UIViewController {
     
     private var view1: UIView = {
         let firstView = UIView()
