@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class CustomTableViewCellFriends: UITableViewCell {
+    
     private var circle: UIImageView = {
         let circle = UIImageView()
         circle.backgroundColor = .green
