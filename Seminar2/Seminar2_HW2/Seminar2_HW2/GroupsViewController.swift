@@ -16,6 +16,7 @@ class GroupsViewController: UITableViewController {
         super.viewDidLoad()
         title = "Groups"
         view.backgroundColor = UIColor.white
+//        navigationController? .setNavigationBarHidden(true, animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

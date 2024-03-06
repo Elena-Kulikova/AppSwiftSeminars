@@ -62,6 +62,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         enterButton.addTarget(self, action: #selector(tap1), for: .touchUpInside)
+        self.navigationController?.isNavigationBarHidden = true
         setupViews()
     }
     
@@ -121,7 +122,7 @@ private extension ViewController {
         let tabBarController = UITabBarController()
         let viewController1 = UINavigationController(rootViewController: FrendsViewController())
         let viewController2 = UINavigationController(rootViewController: GroupsViewController())
-        let viewController3 = UINavigationController(rootViewController: PhotosViewController())
+        let viewController3 = UINavigationController(rootViewController: PhotosViewController(collectionViewLayout:UICollectionViewFlowLayout()))
         
         viewController1.tabBarItem.title = "Friends"
         viewController2.tabBarItem.title = "Groups"
@@ -129,12 +130,15 @@ private extension ViewController {
         
         
         let controllers = [viewController1, viewController2, viewController3]
+        
         for element in controllers {
             element.tabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 25.0, weight: .regular)], for: .normal)
         }
         tabBarController.viewControllers = controllers
+        
         navigationController?.pushViewController(tabBarController, animated: true)
         
+                
     }
     
 }

@@ -14,6 +14,7 @@ class FrendsViewController: UITableViewController {
         super.viewDidLoad()
         title = "Friends"
         view.backgroundColor = UIColor.white
+    
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

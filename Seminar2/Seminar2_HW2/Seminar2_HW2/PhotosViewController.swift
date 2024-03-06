@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class PhotosViewController: UIViewController {
+final class PhotosViewController: UICollectionViewController {
+    
+    
     
     private var view1: UIView = {
         let firstView = UIView()
@@ -53,6 +55,9 @@ class PhotosViewController: UIViewController {
         title = "Photos"
         setupViews()
     }
+    
+
+    
     
     private func setupViews() {
         view.addSubview(view1)
