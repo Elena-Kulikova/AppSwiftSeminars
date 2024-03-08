@@ -11,12 +11,14 @@ import Foundation
 import UIKit
 
 class GroupsViewController: UITableViewController {
+    private var networkService = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Groups"
         view.backgroundColor = UIColor.white
-//        navigationController? .setNavigationBarHidden(true, animated: true)
+        networkService.getGroups()
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

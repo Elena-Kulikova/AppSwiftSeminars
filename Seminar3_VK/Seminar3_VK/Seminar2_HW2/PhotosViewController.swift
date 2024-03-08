@@ -54,6 +54,7 @@ final class PhotosViewController: UICollectionViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         title = "Photos"
+        networkService.getPhotos()
         setupViews()
     }
     

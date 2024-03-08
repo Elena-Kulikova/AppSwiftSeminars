@@ -9,11 +9,13 @@ import Foundation
 import UIKit
 
 class FrendsViewController: UITableViewController {
+    private var networkService = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Friends"
         view.backgroundColor = UIColor.white
+        networkService.getFriends()
     
     }
     
