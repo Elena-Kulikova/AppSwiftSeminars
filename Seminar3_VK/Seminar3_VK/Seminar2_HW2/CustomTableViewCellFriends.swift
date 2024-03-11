@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCellName.swift
+//  CustomTableViewCellFriends.swift
 //  Seminar2_HW2
 //
 //  Created by Elena on 05.03.2024.
