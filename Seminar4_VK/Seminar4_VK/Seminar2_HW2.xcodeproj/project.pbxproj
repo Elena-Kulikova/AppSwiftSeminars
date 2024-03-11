@@ -81,12 +81,9 @@
 				F38C89CF2B962FAA00228C76 /* Assets.xcassets */,
 				F38C89D12B962FAA00228C76 /* LaunchScreen.storyboard */,
 				F38C89D42B962FAA00228C76 /* Info.plist */,
-				F31AFD0A2B9A283400AB2D2D /* NetworkService.swift */,
-				F38C89E02B973C3900228C76 /* GroupsCell.swift */,
-				F38C89DE2B97366800228C76 /* FriendsCell.swift */,
-				F3EB69172B9F8A6500D0AD45 /* PhotoCell.swift */,
 				F3EB69162B9F88C500D0AD45 /* Controllers */,
 				F3EB69152B9F889000D0AD45 /* Models */,
+				F3EB691B2B9F906E00D0AD45 /* Views */,
 			);
 			path = Seminar2_HW2;
 			sourceTree = "<group>";
@@ -111,6 +108,17 @@
 				F38C89E42B973F9400228C76 /* PhotosViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F3EB691B2B9F906E00D0AD45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F31AFD0A2B9A283400AB2D2D /* NetworkService.swift */,
+				F38C89E02B973C3900228C76 /* GroupsCell.swift */,
+				F38C89DE2B97366800228C76 /* FriendsCell.swift */,
+				F3EB69172B9F8A6500D0AD45 /* PhotoCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
