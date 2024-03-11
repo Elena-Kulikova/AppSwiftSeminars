@@ -72,9 +72,9 @@
 		F38C89C52B962FA900228C76 /* Seminar2_HW2 */ = {
 			isa = PBXGroup;
 			children = (
+				F3EB691C2B9F90FE00D0AD45 /* Controllers */,
 				F38C89C62B962FA900228C76 /* AppDelegate.swift */,
 				F38C89C82B962FA900228C76 /* SceneDelegate.swift */,
-				F38C89CA2B962FA900228C76 /* ViewController.swift */,
 				F38C89CF2B962FAA00228C76 /* Assets.xcassets */,
 				F38C89D12B962FAA00228C76 /* LaunchScreen.storyboard */,
 				F38C89D42B962FAA00228C76 /* Info.plist */,
@@ -83,12 +83,20 @@
 				F31AFD102B9A2C8200AB2D2D /* PhotosModel.swift */,
 				F31AFD0C2B9A290600AB2D2D /* FriendsModel.swift */,
 				F38C89E02B973C3900228C76 /* CustomTableViewCellGroups.swift */,
-				F38C89E22B973DF400228C76 /* GroupsViewController.swift */,
-				F38C89E42B973F9400228C76 /* PhotosViewController.swift */,
-				F38C89DC2B97348800228C76 /* FrendsViewController.swift */,
 				F38C89DE2B97366800228C76 /* CustomTableViewCellFriends.swift */,
 			);
 			path = Seminar2_HW2;
+			sourceTree = "<group>";
+		};
+		F3EB691C2B9F90FE00D0AD45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F38C89CA2B962FA900228C76 /* ViewController.swift */,
+				F38C89E42B973F9400228C76 /* PhotosViewController.swift */,
+				F38C89DC2B97348800228C76 /* FrendsViewController.swift */,
+				F38C89E22B973DF400228C76 /* GroupsViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
