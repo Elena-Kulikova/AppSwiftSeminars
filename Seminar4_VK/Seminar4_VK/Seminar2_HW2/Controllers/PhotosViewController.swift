@@ -40,7 +40,7 @@ final class PhotosViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         let model = models[indexPath.row]
-        cell.updateCell(model: model)
+        cell.updateCell(photo: model)
         return cell
     }
 }

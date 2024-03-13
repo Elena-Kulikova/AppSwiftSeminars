@@ -10,8 +10,15 @@ import Foundation
 import UIKit
 
 final class PhotoCell: UICollectionViewCell {
-
-    private let photoView = UIImageView(image: UIImage (systemName: "person" ))
+    
+    //    private let photoView = UIImageView(image: UIImage (systemName: "person" ))
+    private let photoView: UIImageView = {
+        let photo = UIImageView()
+        photo.backgroundColor = .clear
+        photo.layer.cornerRadius = 10
+        photo.layer.masksToBounds = true
+        return photo
+    }()
     
     override init (frame: CGRect) {
         super.init (frame: frame)
@@ -23,17 +30,16 @@ final class PhotoCell: UICollectionViewCell {
         
     }
     
-    func updateCell (model: Photo) {
-        DispatchQueue.global ().async {
-            if let url = URL(string: model.sizes.first?.url ?? ""), let data =
-                try? Data (contentsOf: url)
-            {
-                DispatchQueue.main.async {
-                    self.photoView.image = UIImage(data: data)
-                }
-            }
-        }
-    }
+    func updateCell (photo: Photo) {
+        DispatchQueue.global().async {
+            if let url = URL(string: photo.sizes[3].url ), let data = try? Data(contentsOf: url)
+              {
+                  DispatchQueue.main.async {
+                      self.photoView.image = UIImage(data: data)
+                  }
+              }
+          }
+      }
 
     private func setupViews () {
         addSubview (photoView)
@@ -48,7 +54,7 @@ final class PhotoCell: UICollectionViewCell {
             photoView.trailingAnchor.constraint(equalTo: trailingAnchor),
             photoView.topAnchor.constraint (equalTo: topAnchor),
             photoView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+            ])
     }
     
    

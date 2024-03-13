@@ -15,7 +15,8 @@ final class GroupsCell: UITableViewCell{
     private var circle: UIImageView = {
         let circle = UIImageView()
         circle.backgroundColor = .green
-        circle.layer.cornerRadius = 25
+        circle.layer.cornerRadius = 10
+        circle.layer.masksToBounds = true
         return circle
     }()
     
@@ -23,6 +24,8 @@ final class GroupsCell: UITableViewCell{
         let label = UILabel()
         label.text = "Name"
         label.textColor = .black
+        label.backgroundColor = .clear
+        label.layer.cornerRadius = 10
         return label
     }()
     
@@ -36,7 +39,15 @@ final class GroupsCell: UITableViewCell{
     func setupTextGroups(group: Group) {
         text1.text = group.name ?? ""
         text2.text = group.description ?? ""
-    }
+        DispatchQueue.global().async {
+               if let url = URL(string: group.photo ?? ""), let data = try? Data(contentsOf: url)
+               {
+                   DispatchQueue.main.async {
+                       self.circle.image = UIImage(data: data)
+                   }
+               }
+           }
+       }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

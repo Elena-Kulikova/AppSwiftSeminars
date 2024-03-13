@@ -29,28 +29,28 @@ final class FriendsCell: UITableViewCell {
         return circle
     }()
     
-    func setupTextFriends(friend: Friend) {
-          text.text = (friend.firstName ?? "") + " " + (friend.lastName ?? "")
-          if let online = friend.online {
-              let isOnline = online == 1
-              if isOnline {
-                  onlineCircle.backgroundColor = .green
-              } else {
-                  onlineCircle.backgroundColor = .red
-              }
-          }
-          
-          DispatchQueue.global ().async {
-              if let url = URL (string: friend.photo ?? ""), let data = try?
-                  Data(contentsOf: url)
-              {
-                  DispatchQueue.main.async {
-                      self.friendImageView.image = UIImage(data: data)
-                  }
-              }
-          }
-          
-      }
+//    func setupTextFriends(friend: Friend) {
+//          text.text = (friend.firstName ?? "") + " " + (friend.lastName ?? "")
+//          if let online = friend.online {
+//              let isOnline = online == 1
+//              if isOnline {
+//                  onlineCircle.backgroundColor = .green
+//              } else {
+//                  onlineCircle.backgroundColor = .red
+//              }
+//          }
+//          
+//          DispatchQueue.global ().async {
+//              if let url = URL (string: friend.photo ?? ""), let data = try?
+//                  Data(contentsOf: url)
+//              {
+//                  DispatchQueue.main.async {
+//                      self.friendImageView.image = UIImage(data: data)
+//                  }
+//              }
+//          }
+//          
+//      }
     
     
     func updateCell (model: Friend) {
