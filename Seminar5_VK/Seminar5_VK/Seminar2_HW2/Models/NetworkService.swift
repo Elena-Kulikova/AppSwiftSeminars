@@ -78,29 +78,10 @@ final class NetworkService {
     }
     
     
-    //    func getProfileName (){
-    //         guard let url = URL(string: "https://api.vk.com/method/account.getProfileInfo?access_token=\(NetworkService.token)&v=5.131")
-    //         else{
-    //             return
-    //         }
-    //         session.dataTask(with: url) { (data, _, error) in
-    //             guard let data = data else {
-    //                 return
-    //             }
-    //             do {
-    //                 let profileName = try JSONDecoder().decode(UserModel.self, from: data)
-    //                 print(profileName)
-    //             } catch {
-    //                 print(error)
-    //             }
-    //         }.resume()
-    //
-    //     }
-    
     
     func getProfileInfo(completion: @escaping(Profile?) -> Void) {
         guard let url = URL(string:
-                                "https://api.vk.com/method/users.get?fields=photo_400_orig&access_token=\(NetworkService.token)&v=5.131")
+                                "https://api.vk.com/method/users.get?fields=photo_50_orig&access_token=\(NetworkService.token)&v=5.131")
         else { return }
         session.dataTask(with: url) { (data, _, error) in
             guard let data = data else {

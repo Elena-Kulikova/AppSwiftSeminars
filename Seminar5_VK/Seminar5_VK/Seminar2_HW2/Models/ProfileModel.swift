@@ -20,6 +20,6 @@ struct Profile: Decodable {
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
         case lastName = "last name"
-        case photo = "photo_200"
+        case photo = "photo_50"
     }
 }
