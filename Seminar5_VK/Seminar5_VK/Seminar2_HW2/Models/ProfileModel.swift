@@ -8,10 +8,11 @@
 import Foundation
 
 struct ProfileModel: Decodable {
-    var responce: [User]
+    var responce: [Profile]
 }
 
-struct User: Decodable {
+
+struct Profile: Decodable {
     var firstName: String?
     var lastName: String?
     var photo: String?
@@ -19,6 +20,6 @@ struct User: Decodable {
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
         case lastName = "last name"
-        case photo = "photo 400 orig"
+        case photo = "photo_200"
     }
 }
