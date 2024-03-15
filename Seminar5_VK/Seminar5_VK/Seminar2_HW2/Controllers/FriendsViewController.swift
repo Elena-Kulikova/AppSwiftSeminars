@@ -34,8 +34,8 @@ class FriendsViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear (animated)
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        tableView.backgroundColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = .white
+        tableView.backgroundColor = .white
         tableView.reloadData()
     }
     

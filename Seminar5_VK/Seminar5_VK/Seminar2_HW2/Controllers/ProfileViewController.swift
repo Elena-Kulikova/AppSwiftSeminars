@@ -26,12 +26,12 @@ final class ProfileViewController: UIViewController {
     
     private var profileName: UILabel = {
         var label = UILabel()
-        label.textColor = Theme.currentTheme.textColor
+        label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
     }()
-    private var themeView = ThemeView()
+    
     private var isUserProfile: Bool
     
     init (name: String? = nil, photo: UIImage? = nil, isUserProfile: Bool) {
@@ -40,7 +40,7 @@ final class ProfileViewController: UIViewController {
         profileName.text = name
         profileName.font = UIFont(name: "Papyrus", size: 30)
         profileImageView.image = photo
-        themeView.delegate = self
+       
     }
     
     required init?(coder: NSCoder) {
@@ -50,71 +50,56 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad ()
         title = "Profile"
-        view.backgroundColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = .white
         setupViews()
-        if isUserProfile {
-               networkService.getProfileInfo { [weak self] user in
-                   self?.updateData(model: user)
-               }
-           } else {
-               themeView.isHidden = true
-           }
-       }
+       
         
-    func updateData(model: Profile?) {
-        guard let model = model else { return }
-        DispatchQueue.global().async {
-            if let url = URL(string: model.photo ?? ""), let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    self.profileImageView.image = UIImage(data: data)
+        func updateData(model: Profile?) {
+            guard let model = model else { return }
+            DispatchQueue.global().async {
+                if let url = URL(string: model.photo ?? ""), let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self.profileImageView.image = UIImage(data: data)
+                    }
                 }
             }
+            DispatchQueue.main.async {
+                self.profileName.text = (model.firstName ?? "") + " " + (model.lastName ?? "")
+            }
         }
-        DispatchQueue.main.async {
-            self.profileName.text = (model.firstName ?? "") + " " + (model.lastName ?? "")
-        }
-    }
-    
-
-
-        private func setupViews () {
+        
+        
+        
+        func setupViews () {
             view.addSubview(profileImageView)
             view.addSubview(profileName)
-            view.addSubview(themeView)
+          
             setupConstraints()
         }
-    
         
         
         
-        private func setupConstraints() {
+        
+        func setupConstraints() {
             profileImageView.translatesAutoresizingMaskIntoConstraints = false
             profileName.translatesAutoresizingMaskIntoConstraints = false
-            themeView.translatesAutoresizingMaskIntoConstraints = false
+            
             
             NSLayoutConstraint.activate([
                 profileImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
                 profileImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
                 profileImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
                 profileImageView.heightAnchor.constraint(equalTo: profileImageView.widthAnchor),
-               
+                
                 
                 profileName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
                 profileName.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
                 profileName.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 30),
                 
-                themeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                themeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                themeView.topAnchor.constraint(equalTo: profileName.bottomAnchor, constant: 30),
-                themeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+               
             ])
         }
-}
-      
-extension ProfileViewController: ThemeViewDelegate {
-    func updateColor() {
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        profileName.textColor = Theme.currentTheme.textColor
-        
     }
+    
+ 
 }

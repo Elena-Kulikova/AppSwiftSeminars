@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = .white
         view.addSubview(webView)
         self.navigationController?.isNavigationBarHidden = true
         
