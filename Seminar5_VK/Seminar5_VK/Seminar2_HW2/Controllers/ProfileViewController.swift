@@ -13,6 +13,7 @@ import UIKit
 final class ProfileViewController: UIViewController {
     
     private var networkService = NetworkService()
+    private var profile: ProfileModel? = nil
     
     private var profileImageView: UIImageView = {
         let photo = UIImageView()
@@ -40,6 +41,7 @@ final class ProfileViewController: UIViewController {
         profileName.text = name
         profileName.font = UIFont(name: "Papyrus", size: 30)
         profileImageView.image = photo
+             
        
     }
     
@@ -52,22 +54,30 @@ final class ProfileViewController: UIViewController {
         title = "Profile"
         view.backgroundColor = .white
         setupViews()
-       
-        
-        func updateData(model: Profile?) {
-            guard let model = model else { return }
-            DispatchQueue.global().async {
-                if let url = URL(string: model.photo ?? ""), let data = try? Data(contentsOf: url) {
-                    DispatchQueue.main.async {
-                        self.profileImageView.image = UIImage(data: data)
-                    }
+        networkService.getProfile { [weak self] profile in
+            self?.profile = profile
+          
+        }
+            
+    }
+    
+    func updateData(model: Profile?) {
+        guard let model = model else { return }
+        DispatchQueue.global().async {
+            if let url = URL(string: model.photo ?? ""), let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    self.profileImageView.image = UIImage(data: data)
                 }
             }
-            DispatchQueue.main.async {
-                self.profileName.text = (model.firstName ?? "") + " " + (model.lastName ?? "")
-            }
         }
-        
+        DispatchQueue.main.async {
+            self.profileName.text = (model.firstName ?? "") + " " + (model.lastName ?? "")
+        }
+    }
+
+    
+    
+            
         
         
         func setupViews () {
@@ -99,7 +109,10 @@ final class ProfileViewController: UIViewController {
                
             ])
         }
-    }
+}
+
     
  
-}
+
+
+

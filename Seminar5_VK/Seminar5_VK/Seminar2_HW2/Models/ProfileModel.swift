@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProfileModel: Decodable {
-    var responce: [Profile]
+    var responce: Profile
 }
 
 
